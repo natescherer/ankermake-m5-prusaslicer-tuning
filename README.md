@@ -7,6 +7,7 @@ This repository contains opinionated instructions for how to tune in a AnkerMake
 1. Ensure you have followed all of the Quick Start Guide instructions at <https://support.ankermake.com/s/article/AnkerMake-M5-Quick-Start-Guide>
 1. Have the latest version of PrusaSlicer 2.6+ installed on your computer
 1. Install the latest version of the AnkerMake Community Edition PrusaSlicer profiles from <https://github.com/Ankermgmt/prusaslicer-ankermake-ce-profiles>
+  1. Version 2.3.1 is the minimum requirement for this repo as of the current release
 1. Download the latest ZIP release of this tuning guide from [releases](https://github.com/natescherer/ankermake-m5-prusaslicer-tuning/releases/latest) and unzip it.
 1. Open PrusaSlicer, go to Help > Show Configuration Folder
 1. Copy the contents of the `profiles` folder from the release into the PrusaSlicer configuration folder

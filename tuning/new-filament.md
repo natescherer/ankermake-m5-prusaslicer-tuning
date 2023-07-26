@@ -79,11 +79,11 @@ NOTE: If there is already a Filament Settings profile from this repo for your br
     1. Print Settings: Use whatever `0.20mm NORMAL` profile is most appropriate for your filament type (i.e. if a material-specific variant of the profile exists, use that, otherwise use the System Preset)
     1. Filament Settings:
         1. Whatever Generic preset is closest to your filament. Prefer a (Tuned) variant if it exists.
-        1. Set the filament temperature (both `First layer` and `Other Layers`) to the highest listed temperature in the model name.
+        1. Set the filament temperature (both `First layer` and `Other layers`) to the highest listed temperature in the model name.
             1. Note that it is possible that the hottest temperature exceeds the AnkerMake M5 max temp of 260C; in this case all layers supposed to be hotter than 260C will print at 260C.
     1. Set the Printer Settings profile to `Temperature Tower (0.4 mm nozzle)`
         1. This profile contains pre-loaded custom gcode to adjust the temperature as the model prints
-1. Once the temperature tower is done, inspect each layer for finish, layer adhesion, floppy bridges, stringing around the cone, etc. Use the temperature of the layer that looks best as your `Other Layers` temperature for this filament, and a temperature 5C hotter than that as your `First layer` temperature.
+1. Once the temperature tower is done, inspect each layer for finish, layer adhesion, floppy bridges, stringing around the cone, etc. Use the temperature of the layer that looks best as your `Other layers` and `First layer` temperature for this filament. If you have bed adhesion issues, consider setting the `First layer` temperature to be 5C hotter than the `Other layers` temperature, but I have mostly found this to be unnecessary.
 1. Save your new Filament Settings profile with a name indicating the brand and type of filament.
 1. MAKE SURE TO CHANGE THE PRINTER SETTINGS PROFILE BACK TO NORMAL! Otherwise your next print will have its temperature drop as it gets taller.
 
