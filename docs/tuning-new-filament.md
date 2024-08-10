@@ -101,13 +101,13 @@ Don't have Python installed? (Or, for some reason, you would like to read a very
 ### Generating Calibration Gcode
 
 1. Go to <https://github.com/AndrewEllis93/Print-Tuning-Guide>, select Code, then Download ZIP
-1. Extract this file, and copy out the directory test_prints/extrusion_multiplier_cubes/labelled
+1. Extract this file, and copy out the directory test_prints/extrusion_multiplier_cubes/labeled
 1. In PrusaSlicer
     1. Start a new project with the following settings:
         1. Print Settings: `Calibration - Extrusion Multiplier`
         1. Filament Settings: Whatever you created in the temparatue calibration above
             1. Ensure extrusion multiplier is set to whatever the highest EM value you wish to test is (I recommend 1.00 to start)
-        1. Printer Settings: `AnkerMake-CE M5 (0.4mm nozzle)`
+        1. Printer Settings: `AnkerMake M5 (0.4mm nozzle) -AMCE`
     1. Drag in as many EM cubes from the extracted zip file as you wish to print, each one is labeled with a different value (and the object names will be used by the Python script to actually adjust the value for each object)
         1. I usually test the range from 0.905 to 1.00 in 0.05 increments, but you can do more or less depending on how much plastic you want to burn and exactly how much you want EM to be dialed in
         1. Just be 100% sure that the highest value EM cube you choose is also what you have set for the extrusion multiplier under Filament Settings, otherwise the test will be broken.

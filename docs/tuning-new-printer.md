@@ -43,7 +43,7 @@ The following adjustments were needed for my printer, and I recommend doing them
   - Profiles:
     - Print Settings: `Calibration - Full Bed Test`
     - Filament Settings: Whatever Generic preset is closest to your filament. Prefer a (Tuned) variant if it exists.
-    - Printer Settings: `AnkerMake-CE M5 (0.4mm nozzle) - AMCE`
+    - Printer Settings: `AnkerMake M5 (0.4mm nozzle) - AMCE`
 - Compare the test versus the `Analyzing a Full Bed Test` section of the linked article. You should be passing at this point. If you aren't, it's possible your Z-Offset value is wrong, you need to perform one or more of the hardware tuning steps above again, or you have a hardware problem that you should contact AnkerMake support about.
 
 ## Pressure Advance Tuning
