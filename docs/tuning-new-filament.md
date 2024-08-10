@@ -101,22 +101,32 @@ Don't have Python installed? (Or, for some reason, you would like to read a very
 ### Generating Calibration Gcode
 
 1. Go to <https://github.com/AndrewEllis93/Print-Tuning-Guide>, select Code, then Download ZIP
-1. Extract this file, and copy out the directory test_prints/extrusion_multiplier_cubes/labeled
+1. Extract this file, and copy out the directory `test_prints/extrusion_multiplier_cubes/labeled`
+    * The rest of the extracted ZIP can be discarded
+1. Download needed scripts from this repository and save them wherever you like, making sure to note the full path to the folder you place them in for later
+    * All platforms: [Calibrate-Flow-Embedded.py](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/blob/main/scripts/extrusion-multiplier-tuning/Calibrate-Flow-Embedded.py)
+    * Windows: [Calibrate-Flow-Embedded-Wrapper.bat](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/blob/main/scripts/extrusion-multiplier-tuning/Calibrate-Flow-Embedded-Wrapper.bat)
+    * macOS/Linux: [Calibrate-Flow-Embedded-Wrapper.sh](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/blob/main/scripts/extrusion-multiplier-tuning/Calibrate-Flow-Embedded-Wrapper.sh)
+        * Make sure to run the following to make the wrapper script executable: `chmod u+x Calibrate-Flow-Embedded-Wrapper.sh`
 1. In PrusaSlicer
     1. Start a new project with the following settings:
         1. Print Settings: `Calibration - Extrusion Multiplier`
-        1. Filament Settings: Whatever you created in the temparatue calibration above
+            1. If this is your first time doing an extrusion multiplier calibration on this computer, do the below steps. These can be skipped otherwise.
+                1. Go to `Print Settings > Output options` and set `Post-processing scripts` as needed for your platform:
+                    * Windows: `c:\your\path\here\Calibrate-Flow-Embedded-Wrapper.bat;`
+                    * macOS/Linux: `/your/path/here/Calibrate-Flow-Embedded-Wrapper.sh;`
+                1. Save the print profile
+        1. Filament Settings: Whatever you created in the temperature calibration above
             1. Ensure extrusion multiplier is set to whatever the highest EM value you wish to test is (I recommend 1.00 to start)
         1. Printer Settings: `AnkerMake M5 (0.4mm nozzle) -AMCE`
     1. Drag in as many EM cubes from the extracted zip file as you wish to print, each one is labeled with a different value (and the object names will be used by the Python script to actually adjust the value for each object)
         1. I usually test the range from 0.905 to 1.00 in 0.05 increments, but you can do more or less depending on how much plastic you want to burn and exactly how much you want EM to be dialed in
         1. Just be 100% sure that the highest value EM cube you choose is also what you have set for the extrusion multiplier under Filament Settings, otherwise the test will be broken.
+            * It is CRITICALLY important not to miss this step, or your calibration test will yield an incorrect value
         1. Also, highly recommend that the way you lay the objects out on the print bed goes in sequential order.
-    1. Export and save the gcode, but do NOT send it to the printer yet. It needs to be post-processed so each cube prints with a different EM.
-1. Download [scripts/Calibrate-Flow-Labeled-Cubes.py](scripts/Calibrate-Flow-Labeled-Cubes.py) to your computer, then execute it by running `python Calibrate-Flow-Labeled-Cubes.py` in the terminal app for your platform.
-    1. The script will prompt you to press Enter, which will open a file selection dialog. Choose the gcode file you saved from PrusaSlicer.
-    1. The script will modify and save the file on top of itself. Review the output to make sure there weren't any errors.
-1. Print the newly modified gcode file.
+    1. Slice and export the gcode.
+        * Upon export, the processing script will run and adjust the values for each object
+    1. Check the generated GCODE to ensure it has been modified properly. You can do a find for **_Modified by PPScript_** in a text editor to verify that the file was properly modified.
 
 ### Examining Test Prints
 
