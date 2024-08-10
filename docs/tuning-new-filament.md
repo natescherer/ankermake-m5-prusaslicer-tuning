@@ -138,7 +138,18 @@ Once you have chosen the best value, save that as the EM value for the filament 
 
 This is a significantly less scientific process than the other tuning methods, and I'm not happy about it. I've brute forced retraction settings for the `@M5-TUNED` profiles provided in this repository (this is the only major difference between my profiles and the `@AMCE` profiles), so you can consider just taking those. If you want to tune it in for yourself, however, here's my methodology:
 
-1. Download the test print [string_test_fast_pyramic.stl](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/main/models/retraction-test-tower/string_test_fast_pyramid.stl)
+1. Download the test print [string_test_fast_pyramid.stl](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/main/models/retraction-test-tower/string_test_fast_pyramid.stl)
+1. Open the closet existing filament profile (preferably an `@M5-TUNED` one, and copy the settings from `Filaments > Filament Overrides > Retraction` into the profile you are developing.)
+1. Print the test tower
+1. Change one of the following variables:
+    * Retraction length
+    * Retraction Speed
+    * Deretraction Speed
+    * Deretraction extra length
+    * Retract on layer change
+    * Wipe while retraction
+1. Print the test tower again and compare
+1. Repeat changing variables and printing until you have the best results or you get tired of doing this
 
 ## (Optional) Final Validation
 
