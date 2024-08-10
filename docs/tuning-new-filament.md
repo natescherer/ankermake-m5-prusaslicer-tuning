@@ -104,9 +104,9 @@ Don't have Python installed? (Or, for some reason, you would like to read a very
 1. Extract this file, and copy out the directory `test_prints/extrusion_multiplier_cubes/labeled`
     * The rest of the extracted ZIP can be discarded
 1. Download needed scripts from this repository and save them wherever you like, making sure to note the full path to the folder you place them in for later
-    * All platforms: [Calibrate-Flow-Embedded.py](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/blob/main/scripts/extrusion-multiplier-tuning/Calibrate-Flow-Embedded.py)
-    * Windows: [Calibrate-Flow-Embedded-Wrapper.bat](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/blob/main/scripts/extrusion-multiplier-tuning/Calibrate-Flow-Embedded-Wrapper.bat)
-    * macOS/Linux: [Calibrate-Flow-Embedded-Wrapper.sh](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/blob/main/scripts/extrusion-multiplier-tuning/Calibrate-Flow-Embedded-Wrapper.sh)
+    * All platforms: [Calibrate-Flow-Embedded.py](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/main/scripts/extrusion-multiplier-tuning/Calibrate-Flow-Embedded.py)
+    * Windows: [Calibrate-Flow-Embedded-Wrapper.bat](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/main/scripts/extrusion-multiplier-tuning/Calibrate-Flow-Embedded-Wrapper.bat)
+    * macOS/Linux: [Calibrate-Flow-Embedded-Wrapper.sh](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/main/scripts/extrusion-multiplier-tuning/Calibrate-Flow-Embedded-Wrapper.sh)
         * Make sure to run the following to make the wrapper script executable: `chmod u+x Calibrate-Flow-Embedded-Wrapper.sh`
 1. In PrusaSlicer
     1. Start a new project with the following settings:
@@ -137,6 +137,8 @@ Once you have chosen the best value, save that as the EM value for the filament 
 ## ⭐Calibrating Retraction
 
 This is a significantly less scientific process than the other tuning methods, and I'm not happy about it. I've brute forced retraction settings for the `@M5-TUNED` profiles provided in this repository (this is the only major difference between my profiles and the `@AMCE` profiles), so you can consider just taking those. If you want to tune it in for yourself, however, here's my methodology:
+
+1. Download the test print [string_test_fast_pyramic.stl](https://raw.githubusercontent.com/natescherer/ankermake-m5-prusaslicer-tuning/main/models/retraction-test-tower/string_test_fast_pyramid.stl)
 
 ## (Optional) Final Validation
 
