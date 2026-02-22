@@ -1,5 +1,8 @@
 # Introduction
 
+> [!IMPORTANT]
+> This repository is being archived as I have replaced my AnkerMake M5 with a Prusa Core One. If someone is interested in taking this repo over, please reach out via my socials in my profile. Thanks!
+
 This repository contains opinionated instructions for how to tune in a AnkerMake M5 3D printer for use with PrusaSlicer 2.6+, as well as some pre-calibrated filament profiles and custom print settings optimized for quality.
 
 ## Prerequisites
